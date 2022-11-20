@@ -4,39 +4,71 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
+import com.sample.searchmovieapp.R
 import com.sample.searchmovieapp.databinding.FragmentHomeBinding
+import com.sample.searchmovieapp.util.recyclerHelper.SpacesItemDecoration
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    val viewModel: HomeViewModel by viewModels()
+    private lateinit var viewDataBinding: FragmentHomeBinding
+    private lateinit var reportAdapter: MovieFragmentAdapter
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        viewDataBinding = FragmentHomeBinding.bind(view).apply {
+            searchMovieViewModel = viewModel
         }
-        return root
+        viewDataBinding.lifecycleOwner = this.viewLifecycleOwner
+        // setHasOptionsMenu(true)
+        setupListAdapter()
+        return view
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+
+    }
+
+    private fun setupListAdapter() {
+        val viewModel = viewDataBinding.searchMovieViewModel
+        if (viewModel != null) {
+            reportAdapter =
+                MovieFragmentAdapter(
+                    viewModel, this
+                )
+            viewDataBinding.movieList.addItemDecoration(
+                SpacesItemDecoration(
+                    2
+                )
+            )
+            viewDataBinding.movieList.adapter = reportAdapter
+        } else {
+            //  Log.d("ViewModel not initialized when attempting to set up adapter.")
+        }
+    }
+
+    fun handleVisibility(value: Boolean) {
+        if (value) {
+            viewDataBinding.progressContainer.visibility = View.VISIBLE
+        } else {
+            viewDataBinding.progressContainer.visibility = View.GONE
+        }
+    }
+
+    fun handleDataNotFind(value: Boolean) {
+        if (value) {
+            viewDataBinding.noDataFound.visibility = View.VISIBLE
+        } else {
+            viewDataBinding.noDataFound.visibility = View.GONE
+        }
     }
 }

@@ -1,13 +1,63 @@
 package com.sample.searchmovieapp.ui.home
 
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.sample.searchmovieapp.data.model.SearchMovies
+import com.sample.searchmovieapp.manager.ApiManager
+import com.sample.searchmovieapp.util.Connectivity
+import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    private val _moviesItems =
+        MutableLiveData<MutableList<SearchMovies.Search>>().apply {
+            value = mutableListOf()
+        }
+    val moviesItems: LiveData<MutableList<SearchMovies.Search>> = _moviesItems
+
+    private val _noDataFoundVisibility = MutableLiveData<Int>().apply { value = View.GONE }
+    val noDataFoundVisibility: LiveData<Int> = _noDataFoundVisibility
+
+    val searchTerm = MutableLiveData<String?>().apply { value = null }
+
+
+    /**
+     * function to search movies list
+     * */
+    fun loadReportHistory(
+        apiKey: String,
+        fragmentActivity: HomeFragment,
+        movieName: String,
+        type: String,
+        pageNo: String,
+        limit: String
+    ) {
+        if (Connectivity.isInternetOn()) {
+            val service = ApiManager.initRetrofit(fragmentActivity.requireContext())
+            viewModelScope.launch {
+
+                val response = service.getMoviesList(
+                    apiKey, movieName,type,pageNo, limit
+                )
+                if (response.isSuccessful) {
+                    if (!response.body()!!.search.isNullOrEmpty()) {
+                        fragmentActivity.handleVisibility(false)
+                        fragmentActivity.handleDataNotFind(false)
+                        _moviesItems.value = response.body()!!.search
+                    } else {
+                        fragmentActivity.handleVisibility(false)
+                        fragmentActivity.handleDataNotFind(true)
+                    }
+                }
+            }
+        } else {
+            fragmentActivity.requireActivity().runOnUiThread {
+                Toast.makeText(fragmentActivity.requireContext(),"No internet connection",Toast.LENGTH_SHORT).show()
+            }
+        }
     }
-    val text: LiveData<String> = _text
 }
