@@ -6,9 +6,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.android.material.internal.ViewUtils.hideKeyboard
 import com.sample.searchmovieapp.data.model.SearchMovies
 import com.sample.searchmovieapp.manager.ApiManager
 import com.sample.searchmovieapp.util.Connectivity
+import com.sample.searchmovieapp.util.extns.hideKeyboard
 import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
@@ -28,7 +30,7 @@ class HomeViewModel : ViewModel() {
     /**
      * function to search movies list
      * */
-    fun loadReportHistory(
+    fun loadMovieList(
         apiKey: String,
         fragmentActivity: HomeFragment,
         movieName: String,
@@ -48,6 +50,7 @@ class HomeViewModel : ViewModel() {
                         fragmentActivity.handleVisibility(false)
                         fragmentActivity.handleDataNotFind(false)
                         _moviesItems.value = response.body()!!.search
+                        fragmentActivity.handleKeyBoardVisibility()
                     } else {
                         fragmentActivity.handleVisibility(false)
                         fragmentActivity.handleDataNotFind(true)

@@ -8,14 +8,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.sample.searchmovieapp.R
 import com.sample.searchmovieapp.databinding.FragmentHomeBinding
+import com.sample.searchmovieapp.util.extns.hideKeyboard
 import com.sample.searchmovieapp.util.recyclerHelper.SpacesItemDecoration
+import com.sample.searchmovieapp.util.recyclerHelper.SpacingItemDecoration
 
 class HomeFragment : Fragment() {
 
 
     val viewModel: HomeViewModel by viewModels()
     private lateinit var viewDataBinding: FragmentHomeBinding
-    private lateinit var reportAdapter: MovieFragmentAdapter
+    private lateinit var movieAdapter: MovieFragmentAdapter
 
 
     override fun onCreateView(
@@ -30,6 +32,27 @@ class HomeFragment : Fragment() {
         viewDataBinding.lifecycleOwner = this.viewLifecycleOwner
         // setHasOptionsMenu(true)
         setupListAdapter()
+
+        viewDataBinding.swipeRefresh.setOnRefreshListener {
+            refreshList()
+        }
+
+
+        viewDataBinding.clearSearchTextBtn.setOnClickListener {
+            if (viewDataBinding.etSearchMovie.text.toString()!= null) {
+                viewDataBinding.etSearchMovie.text=null
+                hideKeyboard()
+            }
+        }
+
+        viewDataBinding.goBtn.setOnClickListener {
+            viewModel.loadMovieList(
+                "b9bd48a6", this,
+                viewDataBinding.etSearchMovie.text.toString(), "movie", "1", "30"
+            )
+            viewDataBinding.clearSearchTextBtn.visibility=View.VISIBLE
+        }
+
         return view
     }
 
@@ -41,16 +64,16 @@ class HomeFragment : Fragment() {
     private fun setupListAdapter() {
         val viewModel = viewDataBinding.searchMovieViewModel
         if (viewModel != null) {
-            reportAdapter =
+            movieAdapter =
                 MovieFragmentAdapter(
                     viewModel, this
                 )
             viewDataBinding.movieList.addItemDecoration(
-                SpacesItemDecoration(
-                    2
+                SpacingItemDecoration(
+                    2,5,true
                 )
             )
-            viewDataBinding.movieList.adapter = reportAdapter
+            viewDataBinding.movieList.adapter = movieAdapter
         } else {
             //  Log.d("ViewModel not initialized when attempting to set up adapter.")
         }
@@ -64,11 +87,25 @@ class HomeFragment : Fragment() {
         }
     }
 
+    fun handleKeyBoardVisibility() {
+        hideKeyboard()
+        viewDataBinding.swipeRefresh.isRefreshing = false
+    }
+
     fun handleDataNotFind(value: Boolean) {
         if (value) {
             viewDataBinding.noDataFound.visibility = View.VISIBLE
         } else {
             viewDataBinding.noDataFound.visibility = View.GONE
         }
+    }
+
+    private fun refreshList() {
+        movieAdapter.submitList(emptyList())
+        viewDataBinding.swipeRefresh.isRefreshing = true
+        viewModel.loadMovieList(
+            "b9bd48a6", this,
+            viewDataBinding.etSearchMovie.text.toString(), "movie", "1", "30"
+        )
     }
 }

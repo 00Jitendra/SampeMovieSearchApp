@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.sample.searchmovieapp.data.model.SearchMovies
 import com.sample.searchmovieapp.databinding.ItemMovieBinding
+import com.sample.searchmovieapp.util.imageHelper.ImageHelper
 
 
 class MovieFragmentAdapter(
@@ -42,6 +43,7 @@ class MovieFragmentAdapter(
             binding.allItem = item
             binding.executePendingBindings()
 
+            ImageHelper.loadImage(binding.imgMov,item.poster,context.requireContext())
 
         }
 

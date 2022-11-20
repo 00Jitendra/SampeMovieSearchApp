@@ -9,7 +9,7 @@ import retrofit2.http.*
 interface SampleMovieService {
 
 
-    @GET(ApiSetting.API_KEY)
+    @GET(ApiSetting.SEARCH_MOVIES)
     suspend fun  getMoviesList(
         @Query(ApiSetting.API_KEY) apiKey: String,
         @Query(ApiSetting.MOVIES_NAME) moviesName: String,

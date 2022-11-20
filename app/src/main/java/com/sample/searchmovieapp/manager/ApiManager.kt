@@ -19,7 +19,7 @@ object ApiManager {
 
     fun initRetrofit(context: Context): SampleMovieService {
 
-        return Retrofit.Builder().baseUrl("https://www.omdbapi.com/")
+        return Retrofit.Builder().baseUrl("https://www.omdbapi.com")
             .addConverterFactory(GsonConverterFactory.create())
             .client(makeOkHttpClient(context))
             .build().create(SampleMovieService::class.java)
