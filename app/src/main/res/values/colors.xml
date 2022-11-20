@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#18b8d5</color>
+
+    <color name="textColor">#87000000</color>
+    <color name="colorGrey">#757575</color>
+    <color name="color_text_grey">#595959</color>
+    <color name="color_forget_text">#004aad</color>
+    <color name="color_sign_in_btn">#5271ff</color>
+    <color name="color_toast">#3F3A37</color>
+    <color name="color_loading">#5271ff</color>
+    <color name="color_declined">#ff5757</color>
+    <color name="color_awaiting">#F84005</color>
+    <color name="color_success">#4caf50</color>
+    <color name="color_success_partial">#F4C404</color>
+
+    <!-- grey -->
+    <color name="grey_1">#f5f5f5</color>
+    <color name="grey_0">#f3f3f3</color>
+    <color name="grey_3">#f7f7f7</color>
+    <color name="grey_5">#f2f2f2</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_90">#263238</color>
+    <color name="grey_200">#eeeeee</color>
+    <color name="grey_430">#bfbfbf</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="blue_grey_600">#546E7A</color>
+    <color name="blue_grey_700">#455A64</color>
+</resources>
