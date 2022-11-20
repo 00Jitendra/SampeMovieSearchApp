@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                        
+
+    
+
+                                                     
+
+                                           
+
+                 
+                          
+                                                                              
+
+
+                 
+                            
+                                                                     
+           
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imageMovie_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:minHeight="250dp"
+        app:cardBackgroundColor="@color/grey_5"
+        app:cardCornerRadius="8dp"
+        app:cardUseCompatPadding="true" android:tag="layout/item_movie_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_mov"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"/>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+         

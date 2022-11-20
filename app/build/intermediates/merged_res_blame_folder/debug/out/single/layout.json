@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.sample.searchmovieapp-mergeDebugResources-51:/layout/activity_main.xml",
+        "source": "com.sample.searchmovieapp-main-54:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-mergeDebugResources-51:/layout/fragment_home.xml",
+        "source": "com.sample.searchmovieapp-main-54:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-mergeDebugResources-51:/layout/item_movie.xml",
+        "source": "com.sample.searchmovieapp-main-54:/layout/item_movie.xml"
+    }
+]

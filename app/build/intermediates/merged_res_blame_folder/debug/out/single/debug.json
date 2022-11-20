@@ -1,0 +1,162 @@
+[
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/xml_backup_rules.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/xml_data_extraction_rules.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/drawable_no_data.webp.flat",
+        "source": "com.sample.searchmovieapp-main-54:/drawable/no_data.webp"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/drawable_ic_notifications_black_24dp.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/drawable/ic_notifications_black_24dp.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-mdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-mdpi/ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-hdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-hdpi/ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/drawable_ic_search.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/drawable/ic_search.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/layout_fragment_home.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.sample.searchmovieapp-pngs-47:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-xxxhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-xxxhdpi/ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-xhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-xhdpi/ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-xhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-xhdpi/ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/font_gotham_rounded_book.otf.flat",
+        "source": "com.sample.searchmovieapp-main-54:/font/gotham_rounded_book.otf"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/font_gotham_ultra.TTF.flat",
+        "source": "com.sample.searchmovieapp-main-54:/font/gotham_ultra.TTF"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/xml_network_security_config.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-xxxhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-xxxhdpi/ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/font_ft.TTF.flat",
+        "source": "com.sample.searchmovieapp-main-54:/font/ft.TTF"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-mdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-mdpi/ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/drawable_bg_remove_underline_for_edittext.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/drawable/bg_remove_underline_for_edittext.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/drawable_ic_dashboard_black_24dp.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/drawable/ic_dashboard_black_24dp.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/drawable_ic_cancel.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/drawable/ic_cancel.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/drawable_bg_round.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/drawable/bg_round.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-hdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-hdpi/ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/font_gotham_rounded_medium.otf.flat",
+        "source": "com.sample.searchmovieapp-main-54:/font/gotham_rounded_medium.otf"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/layout_item_movie.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/layout/item_movie.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/drawable_bg_line_border_grey.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/drawable/bg_line_border_grey.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/navigation_mobile_navigation.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/navigation/mobile_navigation.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/font_gotham_medium.TTF.flat",
+        "source": "com.sample.searchmovieapp-main-54:/font/gotham_medium.TTF"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/drawable_ic_home_black_24dp.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/drawable/ic_home_black_24dp.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/layout_activity_main.xml.flat",
+        "source": "com.sample.searchmovieapp-main-54:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-xxhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-xxhdpi/ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.sample.searchmovieapp-merged_res-52:/mipmap-xxhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.sample.searchmovieapp-main-54:/mipmap-xxhdpi/ic_launcher_adaptive_fore.png"
+    }
+]
