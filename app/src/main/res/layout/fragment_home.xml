@@ -128,7 +128,8 @@
                             android:id="@+id/movie_list"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="56dp"/>
+                            android:layout_marginBottom="56dp"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
 
                         <FrameLayout
                             android:visibility="gone"
