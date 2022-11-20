@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.RecyclerView
+import com.sample.searchmovieapp.BuildConfig
 import com.sample.searchmovieapp.R
 import com.sample.searchmovieapp.databinding.FragmentHomeBinding
 import com.sample.searchmovieapp.util.extns.hideKeyboard
@@ -18,6 +20,8 @@ class HomeFragment : Fragment() {
     val viewModel: HomeViewModel by viewModels()
     private lateinit var viewDataBinding: FragmentHomeBinding
     private lateinit var movieAdapter: MovieFragmentAdapter
+    private var offset: Int = 0
+    private var noMoreData = false
 
 
     override fun onCreateView(
@@ -47,8 +51,8 @@ class HomeFragment : Fragment() {
 
         viewDataBinding.goBtn.setOnClickListener {
             viewModel.loadMovieList(
-                "b9bd48a6", this,
-                viewDataBinding.etSearchMovie.text.toString(), "movie", "1", "30"
+                BuildConfig.API_KEY, this,
+                viewDataBinding.etSearchMovie.text.toString(), "movie", offset.toString(), "15"
             )
             viewDataBinding.clearSearchTextBtn.visibility=View.VISIBLE
         }
@@ -74,6 +78,21 @@ class HomeFragment : Fragment() {
                 )
             )
             viewDataBinding.movieList.adapter = movieAdapter
+            viewDataBinding.movieList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                    super.onScrollStateChanged(recyclerView, newState)
+                    if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE && !viewDataBinding.swipeRefresh.isRefreshing && !noMoreData) {
+                        offset++
+                        viewDataBinding.swipeRefresh.isRefreshing = false
+                        viewModel.loadMovieList(
+                            BuildConfig.API_KEY, this@HomeFragment,
+                            viewDataBinding.etSearchMovie.text.toString(), "movie", offset.toString(), "15"
+                        )
+                        // Log.d("scroll tag")
+                    }
+                }
+            })
+
         } else {
             //  Log.d("ViewModel not initialized when attempting to set up adapter.")
         }
@@ -95,6 +114,7 @@ class HomeFragment : Fragment() {
     fun handleDataNotFind(value: Boolean) {
         if (value) {
             viewDataBinding.noDataFound.visibility = View.VISIBLE
+            viewDataBinding.swipeRefresh.isRefreshing = false
         } else {
             viewDataBinding.noDataFound.visibility = View.GONE
         }
@@ -104,8 +124,8 @@ class HomeFragment : Fragment() {
         movieAdapter.submitList(emptyList())
         viewDataBinding.swipeRefresh.isRefreshing = true
         viewModel.loadMovieList(
-            "b9bd48a6", this,
-            viewDataBinding.etSearchMovie.text.toString(), "movie", "1", "30"
+            BuildConfig.API_KEY, this,
+            viewDataBinding.etSearchMovie.text.toString(), "movie", offset.toString(), "15"
         )
     }
 }

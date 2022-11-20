@@ -24,9 +24,7 @@ class HomeViewModel : ViewModel() {
     private val _noDataFoundVisibility = MutableLiveData<Int>().apply { value = View.GONE }
     val noDataFoundVisibility: LiveData<Int> = _noDataFoundVisibility
 
-    val searchTerm = MutableLiveData<String?>().apply { value = null }
-
-
+    val mUpdatedMovieList = mutableListOf<SearchMovies.Search>()
     /**
      * function to search movies list
      * */
@@ -49,12 +47,16 @@ class HomeViewModel : ViewModel() {
                     if (!response.body()!!.search.isNullOrEmpty()) {
                         fragmentActivity.handleVisibility(false)
                         fragmentActivity.handleDataNotFind(false)
-                        _moviesItems.value = response.body()!!.search
+                        mUpdatedMovieList.addAll(response.body()!!.search)
+                        _moviesItems.value = mUpdatedMovieList
                         fragmentActivity.handleKeyBoardVisibility()
                     } else {
                         fragmentActivity.handleVisibility(false)
                         fragmentActivity.handleDataNotFind(true)
                     }
+                }else{
+                    fragmentActivity.handleVisibility(false)
+                    fragmentActivity.handleDataNotFind(true)
                 }
             }
         } else {

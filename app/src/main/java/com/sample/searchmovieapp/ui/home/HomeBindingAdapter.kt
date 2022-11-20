@@ -6,5 +6,5 @@ import com.sample.searchmovieapp.data.model.SearchMovies
 
 @BindingAdapter("app:items")
 fun setMovieList(listView: RecyclerView, items: MutableList<SearchMovies.Search>) {
-    (listView.adapter as MovieFragmentAdapter).submitList(items)
+    (listView.adapter as MovieFragmentAdapter).swapData(items)
 }

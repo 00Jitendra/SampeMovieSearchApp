@@ -5,7 +5,6 @@ import android.content.Context
 import com.sample.searchmovieapp.BuildConfig
 import com.sample.searchmovieapp.api.SampleMovieService
 import com.sample.searchmovieapp.util.Connectivity
-
 import okhttp3.Cache
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -19,7 +18,7 @@ object ApiManager {
 
     fun initRetrofit(context: Context): SampleMovieService {
 
-        return Retrofit.Builder().baseUrl("https://www.omdbapi.com")
+        return Retrofit.Builder().baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(makeOkHttpClient(context))
             .build().create(SampleMovieService::class.java)

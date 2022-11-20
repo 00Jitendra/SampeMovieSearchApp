@@ -18,6 +18,9 @@ class MovieFragmentAdapter(
         TaskDiffCallbackReport()
     ) {
 
+    fun swapData(data: List<SearchMovies.Search>) {
+        submitList(data.toMutableList())
+    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
